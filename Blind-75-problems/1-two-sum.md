@@ -86,11 +86,25 @@ public class Solution {
 
 ---
 
-If you'd like, I can also:
+### 1) Python 
+One-pass Dictionary (O(n)) — Recommended
 
-- Add a small Java `main` to run quick examples locally.
-- Add solutions in other languages (Python, C++).
-- Commit the change to `git`.
+Use a dictionary to store value → index while iterating. For each element, check if its complement (target - nums[i]) already exists in the dictionary.
+
+```python
+class Solution:
+    def twoSum(self, nums, target):
+        nums_map = {}
+        for i, num in enumerate(nums):
+            complement = target - num
+            if complement in nums_map:
+                return [nums_map[complement], i]
+            nums_map[num] = i
+        raise ValueError("No two sum solution")
+```
+
+- Time complexity: O(n)
+- Space complexity: O(n)
 
 File: `Blind-75-problems/1-two-sum.md`
 Link- https://leetcode.com/problems/two-sum/?envType=problem-list-v2&envId=oizxjoit
