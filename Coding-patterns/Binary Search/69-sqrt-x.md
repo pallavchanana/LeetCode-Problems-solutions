@@ -52,6 +52,4 @@ class Solution {
 ```
 
 
-### Time and Space
-- Time - `O(logn)`
-- Space -`O(1)`
+c
